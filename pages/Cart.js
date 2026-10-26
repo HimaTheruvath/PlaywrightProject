@@ -22,13 +22,13 @@ class Cart{
     }
     async addToCart(product){
         await product.click() 
-        this.page.on('dialog',async dialog=>{
-        expect(dialog.message()).toBe("Product added.")
-        await dialog.accept()
-    })
+        const dialogPromise = this.page.waitForEvent('dialog')
         await this.addBtn.click()
+        const dialog = await dialogPromise
+        expect(dialog.message()).toBe('Product added.')
+        await dialog.accept()
     }
-    async goCart(){
+    async goToCart(){
         await this.cart.click()  
     }
     async purchasePhone(){
