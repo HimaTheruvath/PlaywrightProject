@@ -1,0 +1,9 @@
+
+{
+    "signupUser"    :"User",
+    "signupPassword":"User123",
+    "validUsername" :"HimaThomas",
+    "validPassword" :"hima12345",
+    "invalidUsername" :"Job",
+    "invalidPassword" : "hi123"  
+}
